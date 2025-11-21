@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Job/Index');
+    return Inertia::render('Welcome');
 })->name('home');
 
 Route::get('/dashboard', function () {
@@ -33,6 +33,10 @@ Route::get('/job/ant-design', function () {
     return Inertia::render('Job/AntDesign');
 })->name('job.ant-design');
 
+Route::get('/job/shadcn', function () {
+    return Inertia::render('Job/Shadcn');
+})->name('job.shadcn');
+
 Route::get('/kanban', function () {
     return Inertia::render('Kanban/Index');
 })->name('kanban.index');
@@ -53,6 +57,10 @@ Route::get('/kanban/ant-design', function () {
     return Inertia::render('Kanban/AntDesign');
 })->name('kanban.ant-design');
 
+Route::get('/kanban/shadcn', function () {
+    return Inertia::render('Kanban/Shadcn');
+})->name('kanban.shadcn');
+
 Route::get('/crm', function () {
     return Inertia::render('CRM/Index');
 })->name('crm.index');
@@ -64,6 +72,10 @@ Route::get('/crm/mantine', function () {
 Route::get('/crm/ant-design', function () {
     return Inertia::render('CRM/AntDesign');
 })->name('crm.ant-design');
+
+Route::get('/crm/shadcn', function () {
+    return Inertia::render('CRM/Shadcn');
+})->name('crm.shadcn');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

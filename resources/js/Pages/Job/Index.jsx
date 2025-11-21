@@ -3,28 +3,22 @@ import { Head, Link } from '@inertiajs/react';
 export default function JobIndex() {
     const uiLibraries = [
         {
-            name: 'Park UI',
-            description: 'Built with Ark UI - Headless UI components with inline styles',
-            route: '/job/park-ui',
-            color: '#8b5cf6',
-        },
-        {
             name: 'Mantine',
             description: 'Feature-rich React components library with extensive hooks and utilities',
             route: '/job/mantine',
             color: '#339af0',
         },
         {
-            name: 'Chakra UI',
-            description: 'Simple, modular and accessible component library',
-            route: '/job/chakra-ui',
-            color: '#38b2ac',
-        },
-        {
             name: 'Ant Design',
             description: 'Enterprise-class UI design language and React component library',
             route: '/job/ant-design',
             color: '#1890ff',
+        },
+        {
+            name: 'shadcn/ui',
+            description: 'Beautifully designed components built with Radix UI and Tailwind CSS',
+            route: '/job/shadcn',
+            color: '#000000',
         },
     ];
 
@@ -33,10 +27,17 @@ export default function JobIndex() {
             <Head title="Job Form Comparison" />
             <div style={styles.container}>
                 <div style={styles.wrapper}>
+                    {/* Navigation */}
+                    <div style={styles.backLink}>
+                        <Link href="/" style={styles.backLinkAnchor}>
+                            ← Back to Home
+                        </Link>
+                    </div>
+
                     <div style={styles.header}>
                         <h1 style={styles.title}>Job Form UI Library Comparison</h1>
                         <p style={styles.subtitle}>
-                            Compare the same job update form built with four different UI libraries
+                            Compare the same job update form built with three different UI libraries
                         </p>
                     </div>
 
@@ -75,7 +76,7 @@ export default function JobIndex() {
                     <div style={styles.infoCard}>
                         <h3 style={styles.infoTitle}>About This Comparison</h3>
                         <p style={styles.infoText}>
-                            This project demonstrates the same job update form implemented using four popular React UI libraries.
+                            This project demonstrates the same job update form implemented using five popular React UI libraries.
                             Each version includes:
                         </p>
                         <ul style={styles.featureList}>
@@ -93,7 +94,7 @@ export default function JobIndex() {
 
                     <div style={styles.footer}>
                         <p style={styles.footerText}>
-                            Built to compare Park UI, Mantine, Chakra UI, and Ant Design
+                            Built to compare Mantine, Ant Design, and shadcn/ui
                         </p>
                     </div>
                 </div>
@@ -111,6 +112,17 @@ const styles = {
     wrapper: {
         maxWidth: '1200px',
         margin: '0 auto',
+    },
+    backLink: {
+        marginBottom: '2rem',
+    },
+    backLinkAnchor: {
+        color: 'white',
+        textDecoration: 'none',
+        fontSize: '1rem',
+        fontWeight: '500',
+        transition: 'opacity 0.3s ease',
+        display: 'inline-block',
     },
     header: {
         textAlign: 'center',

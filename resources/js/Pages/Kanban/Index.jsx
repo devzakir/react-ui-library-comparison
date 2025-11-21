@@ -3,28 +3,22 @@ import { Head, Link } from '@inertiajs/react';
 export default function KanbanIndex() {
     const uiLibraries = [
         {
-            name: 'Park UI',
-            description: 'Kanban board with Ark UI + Panda CSS - Beautiful headless components with utility-first styling',
-            route: '/kanban/park-ui',
-            color: '#8b5cf6',
-        },
-        {
             name: 'Mantine',
             description: 'Feature-rich Kanban with Mantine UI v8 - Comprehensive component library with modern design',
             route: '/kanban/mantine',
             color: '#339af0',
         },
         {
-            name: 'Chakra UI',
-            description: 'Accessible Kanban with Chakra UI v3 - Simple, modular and fully accessible components',
-            route: '/kanban/chakra-ui',
-            color: '#38b2ac',
-        },
-        {
             name: 'Ant Design',
             description: 'Enterprise Kanban with Ant Design v5 - Professional UI design language with rich components',
             route: '/kanban/ant-design',
             color: '#1890ff',
+        },
+        {
+            name: 'shadcn/ui',
+            description: 'Modern Kanban with shadcn/ui - Beautifully designed components with Radix UI and Tailwind CSS',
+            route: '/kanban/shadcn',
+            color: '#000000',
         },
     ];
 
@@ -33,10 +27,17 @@ export default function KanbanIndex() {
             <Head title="Kanban Board Comparison" />
             <div style={styles.container}>
                 <div style={styles.wrapper}>
+                    {/* Navigation */}
+                    <div style={styles.backLink}>
+                        <Link href="/" style={styles.backLinkAnchor}>
+                            ← Back to Home
+                        </Link>
+                    </div>
+
                     <div style={styles.header}>
                         <h1 style={styles.title}>Kanban Board UI Library Comparison</h1>
                         <p style={styles.subtitle}>
-                            Compare the same drag-and-drop Kanban board built with four different UI libraries
+                            Compare the same drag-and-drop Kanban board built with three different UI libraries
                         </p>
                     </div>
 
@@ -75,7 +76,7 @@ export default function KanbanIndex() {
                     <div style={styles.infoCard}>
                         <h3 style={styles.infoTitle}>About This Comparison</h3>
                         <p style={styles.infoText}>
-                            This project demonstrates the same Kanban board implemented using four popular React UI libraries.
+                            This project demonstrates the same Kanban board implemented using five popular React UI libraries.
                             Each version includes:
                         </p>
                         <ul style={styles.featureList}>
@@ -97,7 +98,7 @@ export default function KanbanIndex() {
 
                     <div style={styles.footer}>
                         <p style={styles.footerText}>
-                            Built to compare Park UI, Mantine, Chakra UI, and Ant Design with advanced drag-and-drop functionality
+                            Built to compare Mantine, Ant Design, and shadcn/ui with advanced drag-and-drop functionality
                         </p>
                     </div>
                 </div>
@@ -115,6 +116,17 @@ const styles = {
     wrapper: {
         maxWidth: '1200px',
         margin: '0 auto',
+    },
+    backLink: {
+        marginBottom: '2rem',
+    },
+    backLinkAnchor: {
+        color: 'white',
+        textDecoration: 'none',
+        fontSize: '1rem',
+        fontWeight: '500',
+        transition: 'opacity 0.3s ease',
+        display: 'inline-block',
     },
     header: {
         textAlign: 'center',

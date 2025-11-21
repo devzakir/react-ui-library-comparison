@@ -14,6 +14,12 @@ export default function CRMIndex() {
             route: '/crm/ant-design',
             color: '#1890ff',
         },
+        {
+            name: 'shadcn/ui',
+            description: 'Modern CRM Contact Detail with beautifully designed components, Radix UI primitives, and Tailwind CSS styling',
+            route: '/crm/shadcn',
+            color: '#000000',
+        },
     ];
 
     return (
@@ -21,6 +27,13 @@ export default function CRMIndex() {
             <Head title="CRM Contact Detail Comparison" />
             <div style={styles.container}>
                 <div style={styles.wrapper}>
+                    {/* Navigation */}
+                    <div style={styles.backLink}>
+                        <Link href="/" style={styles.backLinkAnchor}>
+                            ← Back to Home
+                        </Link>
+                    </div>
+
                     <div style={styles.header}>
                         <h1 style={styles.title}>CRM Contact Detail Comparison</h1>
                         <p style={styles.subtitle}>
@@ -110,7 +123,7 @@ export default function CRMIndex() {
 
                     <div style={styles.footer}>
                         <p style={styles.footerText}>
-                            Built to compare Mantine and Ant Design for enterprise CRM applications
+                            Built to compare Mantine, Ant Design, and shadcn/ui for enterprise CRM applications
                         </p>
                     </div>
                 </div>
@@ -128,6 +141,17 @@ const styles = {
     wrapper: {
         maxWidth: '1200px',
         margin: '0 auto',
+    },
+    backLink: {
+        marginBottom: '2rem',
+    },
+    backLinkAnchor: {
+        color: 'white',
+        textDecoration: 'none',
+        fontSize: '1rem',
+        fontWeight: '500',
+        transition: 'opacity 0.3s ease',
+        display: 'inline-block',
     },
     header: {
         textAlign: 'center',

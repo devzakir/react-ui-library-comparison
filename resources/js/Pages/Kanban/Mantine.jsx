@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import '@mantine/core/styles.css';
 import {
     MantineProvider,
@@ -15,6 +15,7 @@ import {
     Paper,
     Flex,
     Box,
+    Anchor,
 } from '@mantine/core';
 import {
     DndContext,
@@ -368,6 +369,15 @@ export default function MantineKanban() {
                     }}
                 >
                     <Container size="xl">
+                        {/* Navigation */}
+                        <Group mb="lg">
+                            <Link href="/" style={{ textDecoration: 'none' }}>
+                                <Anchor component="span" c="dimmed">
+                                    ← Back to Home
+                                </Anchor>
+                            </Link>
+                        </Group>
+
                         <Stack spacing="xl" mb="xl">
                             <div>
                                 <Title order={1} size="h1" mb="xs">

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import {
     ConfigProvider,
     Form,
@@ -17,6 +17,7 @@ import {
     Row,
     Col,
 } from 'antd';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 import dayjs from 'dayjs';
 import 'antd/dist/reset.css';
 
@@ -81,6 +82,15 @@ Responsibilities`,
             >
                 <div style={{ minHeight: '100vh', backgroundColor: '#f5f5f5', padding: '2rem 1rem' }}>
                     <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+                        {/* Navigation */}
+                        <div style={{ marginBottom: '1.5rem' }}>
+                            <Link href="/" style={{ textDecoration: 'none' }}>
+                                <Button type="text" icon={<ArrowLeftOutlined />}>
+                                    Back to Home
+                                </Button>
+                            </Link>
+                        </div>
+
                         <Card style={{ marginBottom: '1.5rem' }}>
                             <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>
                                 Update Job

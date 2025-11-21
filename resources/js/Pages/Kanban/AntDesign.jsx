@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import {
     ConfigProvider,
     Card,
@@ -9,10 +9,12 @@ import {
     Typography,
     Space,
     Flex,
+    Button,
 } from 'antd';
 import {
     ClockCircleOutlined,
     UserOutlined,
+    ArrowLeftOutlined,
 } from '@ant-design/icons';
 import {
     DndContext,
@@ -335,6 +337,15 @@ export default function AntDesignKanban() {
             >
                 <div style={{ minHeight: '100vh', backgroundColor: '#f0f2f5', padding: '2rem 1rem' }}>
                     <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+                        {/* Navigation */}
+                        <div style={{ marginBottom: '1.5rem' }}>
+                            <Link href="/" style={{ textDecoration: 'none' }}>
+                                <Button type="text" icon={<ArrowLeftOutlined />}>
+                                    Back to Home
+                                </Button>
+                            </Link>
+                        </div>
+
                         <Card style={{ marginBottom: '1.5rem', borderRadius: '12px' }}>
                             <Flex justify="space-between" align="center">
                                 <div>

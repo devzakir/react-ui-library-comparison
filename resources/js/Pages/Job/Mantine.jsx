@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Head } from '@inertiajs/react';
+import { Head, Link as InertiaLink } from '@inertiajs/react';
 import {
     MantineProvider,
     Container,
@@ -16,6 +16,7 @@ import {
     NumberInput,
     MultiSelect,
     Radio,
+    Anchor,
     rem
 } from '@mantine/core';
 import { DatePickerInput } from '@mantine/dates';
@@ -72,6 +73,15 @@ export default function MantineJobForm() {
             <MantineProvider>
                 <div style={{ minHeight: '100vh', backgroundColor: '#f5f5f5', padding: '2rem 0' }}>
                     <Container size="lg">
+                        {/* Navigation */}
+                        <Group mb="lg">
+                            <InertiaLink href="/" style={{ textDecoration: 'none' }}>
+                                <Anchor component="span" c="dimmed">
+                                    ← Back to Home
+                                </Anchor>
+                            </InertiaLink>
+                        </Group>
+
                         <Paper shadow="sm" p="xl" radius="md" style={{ marginBottom: '2rem' }}>
                             <Title order={2} mb="xl" ta="center">Update Job</Title>
 

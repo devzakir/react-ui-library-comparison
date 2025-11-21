@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import {
     ConfigProvider,
     Layout,
@@ -28,6 +28,7 @@ import {
     MailOutlined,
     PhoneOutlined,
     WhatsAppOutlined,
+    ArrowLeftOutlined,
     EnvironmentOutlined,
     DollarOutlined,
     CheckCircleOutlined,
@@ -396,6 +397,15 @@ export default function AntDesignCRM() {
                 <Layout style={{ minHeight: '100vh', backgroundColor: '#f0f2f5' }}>
                     <Content style={{ padding: '24px 16px' }}>
                         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+                            {/* Navigation */}
+                            <div style={{ marginBottom: 16 }}>
+                                <Link href="/" style={{ textDecoration: 'none' }}>
+                                    <Button type="text" icon={<ArrowLeftOutlined />}>
+                                        Back to Home
+                                    </Button>
+                                </Link>
+                            </div>
+
                             <Card style={{ marginBottom: 16 }}>
                                 <Row justify="space-between" align="middle">
                                     <Col>

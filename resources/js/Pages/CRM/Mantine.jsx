@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import '@mantine/core/styles.css';
 import {
     MantineProvider,
@@ -26,6 +26,7 @@ import {
     Flex,
     Box,
     Menu,
+    Anchor,
 } from '@mantine/core';
 import {
     IconMail,
@@ -192,6 +193,15 @@ export default function MantineCRM() {
             <MantineProvider>
                 <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa', padding: '2rem 1rem' }}>
                     <Container size="xl">
+                        {/* Navigation */}
+                        <Group mb="lg">
+                            <Link href="/" style={{ textDecoration: 'none' }}>
+                                <Anchor component="span" c="dimmed">
+                                    ← Back to Home
+                                </Anchor>
+                            </Link>
+                        </Group>
+
                         <Paper shadow="sm" p="xl" radius="md" style={{ marginBottom: '1.5rem' }}>
                             <Group justify="space-between">
                                 <Group>
@@ -530,10 +540,8 @@ export default function MantineCRM() {
                             </Text>
                         </Paper>
                     </Container>
-                </div>
-            </MantineProvider>
 
-            <Modal opened={emailModalOpen} onClose={() => setEmailModalOpen(false)} title="Compose Email" size="lg">
+                    <Modal opened={emailModalOpen} onClose={() => setEmailModalOpen(false)} title="Compose Email" size="lg">
                 <Stack>
                     <TextInput label="To" value={contact.email} disabled />
                     <TextInput label="Subject" placeholder="Enter email subject" />
@@ -584,6 +592,8 @@ export default function MantineCRM() {
                     </Group>
                 </Stack>
             </Modal>
+                </div>
+            </MantineProvider>
         </>
     );
 }
