@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:park-ui.com)",
+      "WebFetch(domain:www.chakra-ui.com)",
+      "WebSearch",
+      "Bash(npm install:*)",
+      "Bash(php artisan test:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:mantine.dev)",
+      "Bash(php artisan dusk:*)",
+      "Bash(php artisan:*)",
+      "Bash(cat:*)",
+      "Bash(composer require:*)",
+      "WebFetch(domain:pestphp.com)",
+      "Bash(npm run build:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "laravel-boost"
+  ]
+}
